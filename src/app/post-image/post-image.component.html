@@ -1,0 +1,53 @@
+<h1 style="text-align: center">Peliculas</h1>
+<div *ngFor="let prod of posts">
+    
+
+
+
+    
+</div>
+
+<div class="row">
+    <ul id="thumbnailsList">
+      <li *ngFor="let post of posts" >
+            <h3>
+                    <a [title]="'Detalles del producto'+ post.name"> 
+                        {{ post.name}}
+                    </a>
+                   
+                </h3>
+            
+        <img src="{{post.img}}" class="cart-item" width="400" height="600">
+        <p *ngIf="post.descrip">
+                Descripción: {{post.descrip}}
+           </p>
+           <button (click)="share()">
+                Compartir
+            </button>
+        
+        <span [ngSwitch]="post.rank">
+            <p *ngSwitchCase=1>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Star_rating_1_of_5.png" class="tn" width="100" height="30">
+            </p>
+            <p *ngSwitchCase=2>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Star_rating_2_of_5.png" class="tn" width="100" height="30">
+            </p>
+            <p *ngSwitchCase=3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Star_rating_3_of_5.png" class="tn" width="100" height="30">
+            </p>
+            <p *ngSwitchCase=4>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Star_rating_4_of_5.png" class="tn" width="100" height="30">
+            </p>
+            <p *ngSwitchCase=5>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Star_rating_5_of_5.png" class="tn" width="100" height="30">
+            </p>
+        </span>    
+
+    </li>
+
+      
+   
+
+      
+    </ul>
+  </div>
